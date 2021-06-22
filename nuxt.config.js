@@ -14,7 +14,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/i18n'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -35,6 +35,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -45,6 +46,29 @@ export default {
     manifest: {
       lang: 'en',
     },
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js',
+        name: 'English',
+      },
+      {
+        code: 'ko',
+        iso: 'ko-KO',
+        file: 'ko-KO.js',
+        name: '한국어',
+      },
+    ],
+    vueI18n: {
+      fallbackLocale: 'ko',
+    },
+    defaultLocale: 'ko',
+    detectBrowserLanguage: true,
+    langDir: 'i18n/',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
