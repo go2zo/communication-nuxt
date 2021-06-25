@@ -14,10 +14,10 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/i18n'],
+  plugins: ['~/plugins/i18n', '~/plugins/vue-observe-visibility.client.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: ['~/components', '~/components/templates'],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -25,16 +25,21 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    // https://i18n.nuxtjs.org/
     'nuxt-i18n',
   ],
 
@@ -49,6 +54,7 @@ export default {
   },
 
   i18n: {
+    strategy: 'no_prefix',
     locales: [
       {
         code: 'en',
@@ -58,8 +64,8 @@ export default {
       },
       {
         code: 'ko',
-        iso: 'ko-KO',
-        file: 'ko-KO.js',
+        iso: 'ko-KR',
+        file: 'ko-KR.js',
         name: '한국어',
       },
     ],
@@ -67,7 +73,10 @@ export default {
       fallbackLocale: 'ko',
     },
     defaultLocale: 'ko',
-    detectBrowserLanguage: true,
+    parsePages: false,
+    detectBrowserLanguage: false,
+    seo: false,
+    lazy: true,
     langDir: 'i18n/',
   },
 
