@@ -9,13 +9,23 @@ export default {
     links: [
       {
         name: 'Api',
-        icon: 'eye',
+        icon: 'code',
         slug: 'api-1.x-book-slug',
       },
       {
-        name: 'Menu',
-        icon: 'th',
-        slug: 'menu',
+        name: 'SMS',
+        icon: 'sms',
+        slug: 'sms',
+      },
+      {
+        name: 'E-mail',
+        icon: 'envelope',
+        slug: 'email',
+      },
+      {
+        name: 'Setup',
+        icon: 'cog',
+        slug: 'setup',
       },
     ],
     search: {
