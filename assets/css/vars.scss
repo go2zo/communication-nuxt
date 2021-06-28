@@ -1,0 +1,19 @@
+:root {
+  --nuxt-gray: #2F495E;
+  --primary-base: #00C58E;
+  --primary: #00E0A1;
+  --surface: #F8FAFC;
+  --surface-primary: #2F495E;
+  --surface-secondary: #606F7B;
+  --surface-elevated: #FFF;
+  --border-color: #D1D5DB;
+}
+
+[data-theme="dark"] {
+  --primary: #07A377;
+  --surface: #2C3E50;
+  --surface-primary: #F5F7FA;
+  --surface-secondary: #B8C2CC;
+  --surface-elevated: #2F495E;
+  --border-color: #4B5563;
+}
