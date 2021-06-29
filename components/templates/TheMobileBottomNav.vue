@@ -5,7 +5,7 @@
         <NuxtLink
           v-if="!link.href"
           :key="link.slug"
-          class="block md:flex md:justify-center w-full p-2 md:p-4 text-onSurfacePrimary hover:no-underline hover:text-primary-base text-center visited:text-nuxt-gray transition-colors duration-300 ease-linear"
+          class="block md:flex md:justify-center w-full p-2 md:p-4 text-onSurfacePrimary hover:no-underline hover:text-primary-base text-center visited:text-gray transition-colors duration-300 ease-linear"
           :to="
             localePath({
               name: link.slug,
@@ -27,7 +27,7 @@
           :href="link.href"
           target="_blank"
           rel="noopener"
-          class="block md:flex md:justify-center w-full p-2 md:p-4 text-onSurfacePrimary hover:no-underline hover:text-primary-base text-center visited:text-nuxt-gray transition-colors duration-300 ease-linear"
+          class="block md:flex md:justify-center w-full p-2 md:p-4 text-onSurfacePrimary hover:no-underline hover:text-primary-base text-center visited:text-gray transition-colors duration-300 ease-linear"
         >
           <component
             :is="link.icon + '-icon'"

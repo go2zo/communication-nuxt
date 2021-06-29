@@ -15,9 +15,9 @@ module.exports = {
         ss: '0.666666rem',
       },
       colors: {
-        nuxt: {
-          gray: 'var(--nuxt-gray)',
-        },
+        gray: 'var(--gray)',
+        lightgreen: 'var(--lightgreen)',
+        green: 'var(--green)',
         'primary-base': 'var(--primary-base)',
         onSurfacePrimary: 'var(--surface-primary)',
         onSufaceSecondary: 'var(--surface-secondary)',
