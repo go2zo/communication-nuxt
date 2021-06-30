@@ -39,14 +39,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // https://http.nuxtjs.org/
+    '@nuxt/http',
     // https://i18n.nuxtjs.org/
     'nuxt-i18n',
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  // Http module configuration: https://http.nuxtjs.org/options
+  http: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
