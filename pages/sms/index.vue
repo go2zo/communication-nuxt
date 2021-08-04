@@ -3,7 +3,8 @@
     <div class="container mx-auto px-4 lg:flex pb-12">
       <TheAsideNav :links="links" section="sms" class="hidden lg:block" />
       <div class="w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4">
-        <nuxt-child />
+        <NuxtChild />
+        <RouterView />
       </div>
     </div>
   </div>
@@ -11,20 +12,19 @@
 
 <script>
 export default {
-  data() {
-    return {
-      nestedRoutes: []
-    }
+  key(route) {
+    return route.fullPath
   },
-  created() {
-    this.$router.options.routes.forEach(routeOption => {
-      if (routeOption.path.startsWith(this.$route.path)) {
-        this.nestedRoutes.push({
-          name: routeOption.name,
-          path: routeOption.path
-        })
-      }
-    })
+  async asyncData({app, route}) {
+    let pages = []
+    console.log(app.router.options.routes)
+    try {
+      pages = await app.router.options.routes.filter(r => r.path.startsWith(route.path))
+    } catch (e) { }
+
+    return {
+      links: pages
+    }
   }
 }
 </script>

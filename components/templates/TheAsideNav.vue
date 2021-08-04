@@ -1,17 +1,21 @@
 <template>
   <aside class="opacity-transition block bg-gray-100 mt-8 -mx-4 lg:bg-transparent lg:mt-0 lg:mx-0 lg:inset-0 z-90 lg:mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-1/4">
-    <div></div>
+    <div>
+      <nav>
+        <div v-for="(sublinks, group) in sortedLinks" :key="`links-${group}`">
+          <h3 :key="`title-${group}`"></h3>
+        </div>
+      </nav>
+    </div>
   </aside>
 </template>
 
 <script>
-import sortBy from 'lodash.sortby'
-
 export default {
   props: {
     links: {
-      type: Object,
-      default: () => {}
+      type: Array,
+      default: () => []
     },
     section: {
       type: String,
@@ -35,13 +39,7 @@ export default {
         : this.$route.path
     },
     sortedLinks() {
-      const links = {}
-      sortBy(Object.keys(this.links), link => {
-        return Object.keys(this.$i18n.t(`content.${this.section}`)).indexOf(link)
-      }).forEach(key => {
-        links[key] = this.links[key]
-      })
-      return links
+      return this.links
     }
   }
 }
