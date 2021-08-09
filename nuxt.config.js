@@ -16,7 +16,11 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/i18n', '~/plugins/vue-observe-visibility.client.js'],
+  plugins: [
+    '~/plugins/i18n',
+    '~/plugins/vue-observe-visibility.client.js',
+    '~/plugins/deep-pick.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: ['~/components', '~/components/templates'],

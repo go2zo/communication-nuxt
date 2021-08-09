@@ -19,7 +19,7 @@ export default {
     } catch (e) { }
 
     return {
-      links: this.$deepPick(pages, ['path', 'name'])
+      links: await app.$deepPick(pages, ['path', 'name'])
     }
   }
 
