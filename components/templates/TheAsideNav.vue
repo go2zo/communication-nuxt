@@ -1,5 +1,5 @@
 <template>
-  <aside class="opacity-transition block bg-gray-100 mt-8 -mx-4 lg:bg-transparent lg:mt-0 lg:mx-0 lg:inset-0 z-90 lg:mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-1/4">
+  <aside class="block mt-8 -mx-4 bg-gray-100 opacity-transition lg:bg-transparent lg:mt-0 lg:mx-0 lg:inset-0 z-90 lg:mb-0 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-1/4">
     <div>
       <nav>
         <div v-for="(sublinks, group) in sortedLinks" :key="`links-${group}`">
@@ -14,8 +14,8 @@
 export default {
   props: {
     links: {
-      type: Array,
-      default: () => []
+      type: Object,
+      default: () => {}
     },
     section: {
       type: String,

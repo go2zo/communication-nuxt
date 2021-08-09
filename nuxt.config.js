@@ -43,6 +43,8 @@ export default {
     '@nuxt/http',
     // https://i18n.nuxtjs.org/
     'nuxt-i18n',
+    // https://github.com/paulgv/nuxt-vuex-router-sync
+    'nuxt-vuex-router-sync',
   ],
 
   // Http module configuration: https://http.nuxtjs.org/options

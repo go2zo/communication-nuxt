@@ -1,6 +1,6 @@
 <template>
   <div class="shadow-main">
-    <div class="container mx-auto px-4 lg:flex pb-12">
+    <div class="container px-4 pb-12 mx-auto lg:flex">
       <TheAsideNav :links="links" section="sms" class="hidden lg:block" />
       <div class="w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4">
         <NuxtChild />
@@ -12,19 +12,16 @@
 
 <script>
 export default {
-  key(route) {
-    return route.fullPath
-  },
   async asyncData({app, route}) {
-    let pages = []
-    console.log(app.router.options.routes)
+    let pages = {}
     try {
-      pages = await app.router.options.routes.filter(r => r.path.startsWith(route.path))
+      pages = await app.router.options.routes.find(r => r.path.startsWith(route.path))
     } catch (e) { }
 
     return {
-      links: pages
+      links: this.$deepPick(pages, ['path', 'name'])
     }
   }
+
 }
 </script>
