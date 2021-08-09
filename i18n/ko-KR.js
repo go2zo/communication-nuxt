@@ -27,9 +27,23 @@ export default {
         icon: 'cog',
         slug: 'settings',
       },
+      {
+        name: 'Example',
+        icon: 'cog',
+        slug: 'example',
+      },
     ],
     search: {
       placeholder: '검색 ("/" to focus)',
+    },
+  },
+
+  content: {
+    email: {
+      email: 'Email',
+    },
+    example: {
+      category1: '예제 카테고리',
     },
   },
 

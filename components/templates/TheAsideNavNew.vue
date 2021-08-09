@@ -10,7 +10,7 @@
             >
               {{ $t(`content.${section}.${group}`) }}
             </h3>
-            <ul class="pb-8">
+            <ul>
               <li
                 v-for="(link, index) in sublinks"
                 :key="index"

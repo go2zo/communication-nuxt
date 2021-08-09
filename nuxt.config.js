@@ -19,7 +19,8 @@ export default {
   plugins: [
     '~/plugins/i18n',
     '~/plugins/vue-observe-visibility.client.js',
-    '~/plugins/deep-pick.js'
+    '~/plugins/deep-pick.js',
+    '~/plugins/load-pages.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,14 +46,13 @@ export default {
   modules: [
     // https://http.nuxtjs.org/
     '@nuxt/http',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
     // https://i18n.nuxtjs.org/
     'nuxt-i18n',
     // https://github.com/paulgv/nuxt-vuex-router-sync
     'nuxt-vuex-router-sync',
   ],
-
-  // Http module configuration: https://http.nuxtjs.org/options
-  http: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -60,6 +60,12 @@ export default {
       lang: 'en',
     },
   },
+
+  // Http module configuration: https://http.nuxtjs.org/options
+  http: {},
+
+  // Content module configuration: https://content.nuxtjs.org/configuration
+  content: {},
 
   i18n: {
     strategy: 'no_prefix',

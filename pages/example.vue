@@ -12,7 +12,7 @@
 <script>
 export default {
   async asyncData({ route, $loadPages }) {
-    const section = 'email'
+    const section = 'example'
     return { ...await $loadPages(route.path, section), section }
   }
 }
